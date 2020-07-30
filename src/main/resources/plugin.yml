@@ -1,0 +1,16 @@
+name: PrefixManager
+version: ${project.version}
+main: prefixmanager.prefixmanager.PrefixManager
+api-version: 1.13
+authors: [RyanBorger]
+description: Allows a user to manage their prefixes
+commands:
+  prefixuser:
+    description: Finds all prefixes for a player /prefixlist
+    usage:
+  listprefixes:
+    description: Lists all available prefixes
+    usage:
+  prefix:
+    description: Opens the prefix GUI
+    usage:
