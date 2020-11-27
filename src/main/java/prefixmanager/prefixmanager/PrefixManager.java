@@ -27,6 +27,12 @@ public final class PrefixManager extends JavaPlugin {
             return;
         }
 
+        if (!correctDependencies() ) {
+            System.out.println("You are missing the required dependencies");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
 
         // Plugin startup logic
         System.out.println("PrefixManager has been enabled");
@@ -56,6 +62,36 @@ public final class PrefixManager extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    public boolean correctDependencies() {
+        boolean Enabled = true;
+
+        if (getServer().getPluginManager().getPlugin("Vault") == null) {
+            Enabled = false;
+        }
+
+        if (getPermissionPlugin().equals("")) {
+            Enabled = false;
+        }
+
+        return Enabled;
+    }
+
+    public String getPermissionPlugin() {
+        String permissionPlugin = "";
+
+        if (getServer().getPluginManager().getPlugin("PermissionsEx") != null) {
+            //Server uses PermissionsEx
+            permissionPlugin = "PermissionsEx";
+        }
+
+        if (getServer().getPluginManager().getPlugin("LuckPerms") != null) {
+            //Server uses PermissionsEx
+            permissionPlugin = "LuckPerms";
+        }
+
+        return permissionPlugin;
     }
 
 
