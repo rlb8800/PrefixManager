@@ -15,6 +15,7 @@ import java.util.Arrays;
 public class GetAllPrefixes implements CommandExecutor {
 
     String Prefix = ChatColor.RED + "PrefixGUI:" + ChatColor.GRAY + " ";
+    //Test
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
