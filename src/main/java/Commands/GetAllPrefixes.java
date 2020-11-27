@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class GetAllPrefixes implements CommandExecutor {
+    //Test Dev Commit
 
     String Prefix = ChatColor.RED + "PrefixGUI:" + ChatColor.GRAY + " ";
 
